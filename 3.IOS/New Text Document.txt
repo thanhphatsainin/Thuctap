@@ -1,0 +1,13 @@
+1. If you introduce new methods or variables to a Swift class, marking them as @objc exposes them to the Objective-C runtime. This is necessary when you have Objective-C code that uses your Swift class, or, if you are using Objective-C-type features like Selectors. For example, the target-action pattern: button.addTarget(self, action:#selector(didPressButton), for:.touchUpInside)
+
+Nếu bạn giới thiệu các phương thức hoặc biến mới cho một lớp Swift, việc đánh dấu chúng là @objc sẽ hiển thị chúng trong thời gian chạy Objective-C. Điều này là cần thiết khi bạn có mã Objective-C sử dụng lớp Swift của mình hoặc nếu bạn đang sử dụng các tính năng kiểu Objective-C như Selectors. Ví dụ: mẫu hành động đích: button.addTarget (self, action: #selector (didPressButton), cho: .touchUpInside)
+
+Swift không sử dụng bộ chọn, nhưng Objective-C thì có. Và bởi vì nhiều khung công tác iOS được viết bằng Objective-C và bạn sử dụng chúng cùng với Swift, bạn sử dụng bộ chọn trong Swift.
+
+2. The above selector is a reference to a function, which can be checked at compile-time. Prior to running the app, Swift checks if the selector (“function”) actually exists. If it doesn’t, you’ll see an error message. This reduces bugs, because you can catch them early on.
+
+Bộ chọn ở trên là một tham chiếu đến một hàm, có thể được kiểm tra tại thời điểm biên dịch. Trước khi chạy ứng dụng, Swift sẽ kiểm tra xem bộ chọn (“chức năng”) có thực sự tồn tại hay không. Nếu không, bạn sẽ thấy thông báo lỗi. Điều này làm giảm lỗi, bởi vì bạn có thể bắt chúng sớm.
+
+3. Don’t forget to add the @objc attribute to a function that you want to use with target-action. This will make the function available to Objective-C, which is required because UIControl (and target-action) is an Objective-C class.
+
+Đừng quên thêm thuộc tính @objc vào một hàm mà bạn muốn sử dụng với target-action. Điều này sẽ làm cho chức năng có sẵn cho Objective-C, điều này là bắt buộc vì UIControl (và target-action) là một lớp Objective-C

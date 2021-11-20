@@ -1,0 +1,40 @@
+Hàng đợi công văn là hàng đợi FIFO mà ứng dụng của bạn có thể gửi nhiệm vụ dưới dạng các đối tượng khối.
+❖ Hàng đợi gửi thực thi các tác vụ theo thứ tự hoặc đồng thời. Công việc được đệ trình để gửi hàng đợi thực thi trên một nhóm các luồng do hệ thống quản lý.
+❖ Ngoại trừ hàng đợi gửi đại diện cho luồng chính của ứng dụng của bạn, hệ thống không đảm bảo về luồng nó sử dụng để thực thi một tác vụ.
+❖ Bạn có thể lên lịch các hạng mục công việc đồng bộ hoặc không đồng bộ
+
+
+Có hai loại hàng đợi gửi:
+➔ Hàng đợi nối tiếp có thể thực hiện một tác vụ tại một thời điểm, các hàng đợi này có thể được sử dụng để đồng bộ hóa quyền truy cập vào một tài nguyên cụ thể.
+➔ Mặt khác, các hàng đợi đồng thời có thể thực thi một hoặc nhiều tác vụ song song trong cùng một thời điểm.
+
+Hàng đợi chính, toàn cầu và tùy chỉnh:
+➔ Hàng đợi chính là một chuỗi nối tiếp, mọi tác vụ trên hàng đợi chính đều chạy trên chuỗi chính.
+➔ Hàng đợi toàn cục là hệ thống cung cấp các hàng đợi đồng thời được chia sẻ thông qua hoạt động
+hệ thống. Có chính xác bốn trong số chúng được sắp xếp theo mức độ ưu tiên cao, mặc định, thấp cộng với hàng đợi nền được điều chỉnh IO.
+➔ Người dùng có thể tạo hàng đợi tùy chỉnh. Hàng đợi đồng thời tùy chỉnh luôn được ánh xạ thành một trong các hàng đợi chung bằng cách chỉ định thuộc tính Chất lượng dịch vụ
+(QoS).
+
+Hàng đợi do hệ thống cung cấp:
+➔ Hàng đợi chính nối tiếp
+➔ Hàng đợi toàn cầu đồng thời
+➔ hàng đợi toàn cầu ưu tiên cao
+➔ hàng đợi toàn cầu ưu tiên mặc định
+➔ hàng đợi toàn cầu ưu tiên thấp
+➔ hàng đợi nền toàn cầu (io bị điều chỉnh)
+
+Hàng đợi tùy chỉnh theo chất lượng dịch vụ:
+➔ userInteractive (cập nhật giao diện người dùng) -> hàng đợi chính nối tiếp
+➔ userInitiated (các tác vụ liên quan đến giao diện người dùng không đồng bộ) -> hàng đợi toàn cầu ưu tiên cao
+➔ default -> hàng đợi toàn cầu ưu tiên mặc định
+➔ tiện ích -> hàng đợi toàn cầu ưu tiên thấp
+➔ background -> hàng đợi nền chung
+➔ không xác định (thấp nhất) -> hàng đợi toàn cầu ưu tiên thấp
+
+
+Nhóm cho phép bạn tổng hợp một tập hợp các nhiệm vụ và đồng bộ hóa các hành vi trên nhóm. Bạn đính kèm nhiều mục công việc vào một nhóm và lên lịch cho chúng để thực thi không đồng bộ trên cùng một hàng đợi hoặc các hàng đợi khác nhau. Khi tất cả các hạng mục công việc kết thúc thực thi, nhóm sẽ thực thi trình xử lý hoàn thành của nó. Bạn cũng có thể đợi đồng bộ cho tất cả các tác vụ trong nhóm thực thi xong.
+❖ Sử dụng nhóm điều phối cũng mang lại cho chúng tôi một lợi thế lớn là các tác vụ của chúng tôi có thể chạy đồng thời, trong các hàng đợi riêng biệt. Điều đó cho phép chúng tôi bắt đầu đơn giản và sau đó dễ dàng thêm đồng thời sau này nếu cần mà không cần phải viết lại bất kỳ tác vụ nào của chúng tôi. Tất cả những gì chúng ta phải làm là
+các lệnh gọi cân bằng để enter () và rời khỏi () trên một nhóm điều phối để nó đồng bộ hóa các nhiệm vụ của chúng ta.
+
+Semaphore điều phối là một triển khai hiệu quả của semaphore đếm truyền thống. Lệnh gọi semaphores gửi xuống hạt nhân chỉ khi luồng gọi cần bị chặn. Nếu semaphore đang gọi không cần chặn thì không có lệnh gọi hạt nhân nào được thực hiện.
+❖ Bạn tăng số lượng semaphore bằng cách gọi phương thức signal () và giảm số lượng semaphore bằng cách gọi wait () hoặc một trong các biến thể của nó chỉ định thời gian chờ.

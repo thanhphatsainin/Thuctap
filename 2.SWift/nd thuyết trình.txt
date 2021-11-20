@@ -1,0 +1,45 @@
+Structures and Classes
+1. Memory Management in Swift: Automatic Reference Counting (ARC), Strong, Weak and Unowned References
+2. Overview Structure and Class (Definition, Instances, Initializers,...)
+3. Comparing Structures and Classes
+
+
+Deinit : Không bắt buộc bạn phải triển khai phương thức đó, nhưng bạn có thể sử dụng nó nếu bạn cần thực hiện một số hành động hoặc dọn dẹp trước khi phân bổ đối tượng.
+
+Usually, when a property is being created, the reference is strong unless they are declared weak or unowned.
+
+
+Anh ơi cho em gửi slide present ạ.
+
+Because classes are reference types, tenEighty and alsoTenEighty actually both refer to the same VideoMode instance. Effectively, they’re just two different names for the same single instance
+class ShoppingListItem {
+    var name: String?
+    var quantity = 1
+    // init(name:String, quantity:Int){
+    //     self.name = name
+    //     self.quantity = quantity
+       
+    // }
+}
+var item = ShoppingListItem()
+print(item.quantity)
+// var item3 = ShoppingListItem(name : "nam1", quantity: 3)
+// print(item3.name)
+
+struct Shopp {
+    var name: String?
+    var quantity = 1
+    var purchased = false
+}
+var item1 = Shopp()
+var item2 = Shopp(name : "nam", quantity : 2, purchased : true)
+print(item2)
+print(item1.quantity)
+
+1. Definition Syntax
+2. Structure and Class Instances
+3. Accessing Properties
+4. Memberwise Initializers for Structure Types and init for Class
+5. Structures Are Value Types, Mutating Func trong Struct
+6. Classes Are Reference Types, Inheritance, Overriding, Deinit trong Class.
+7. Comparing Structures and Classes

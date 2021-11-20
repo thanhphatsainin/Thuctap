@@ -1,0 +1,100 @@
+1. where can drop shadow for view be handled ?
+ContentView
+Frame
+CALayer
+Bound
+2. When dose deinit get called ?
+After the class was deallocated
+During the class are deallocating
+Before the class was deallocated
+All the above
+3. What is the first method will be called in AppDelegate when app run ?
+applicationDidBecomeActive(_ application:)
+applicationWillEnterForeground(_ application:)
+applicationWillResignActive(_ application:)
+application(_ :didFinishLaunchingWithOptions:)
+4. Which can be reused in CollectionView ?
+Cell
+Cell and Header
+Cell and Footer
+Cell, Header and Footer
+5. Which of the following statements is NOT true about Navigation in iOS ?
+When a new view is pushed, back button is auto generated to pop the view when needed.
+A navigation controller object manages its child view controllers using an navigation stack.
+Navigator can present a new different navigator
+When a new view is presented ,back button is auto generated to dismiss the view when needed.
+6. Which of the following components is reusable ?
+tableViewHeader
+tableViewCell
+View
+All of the above
+7. Given following function: func tableView(_ tableView: UITableView, ____ section: Int) -> Int { guard let trackList = trackList else { return 0 } return trackList.count } What could be posible name of this function ?
+numberOfRowsInSection
+numberOfSection
+numberOfCellsInSection
+cellForRowAt
+8. When change screen from ViewControllerA to ViewControllerB, what is the order that functions will be called?
+ViewDidLoad B -> ViewWillAppear B -> ViewDidAppear B-> ViewWillDisappear A -> ViewDidDisappear A
+ViewDidLoad B -> ViewWillDisappear A -> ViewDidDisappear A -> ViewWillAppear B -> ViewDidAppear B
+ViewDidLoad B -> ViewWillDisappear A -> ViewWillAppear B -> ViewDidAppear B -> ViewDidDisappear A
+ViewDidLoad B -> ViewWillAppear B -> ViewWillDisappear A -> ViewDidAppear B -> ViewDidDisappear A
+9. How many constraints are needed to state an UIView's coorddinate and size in Auto Layout?
+2.0
+3.0
+4.0
+5.0
+10. Given two View: View1 and View2: Which of the following functions will be called at SECOND order when View1 push to View2
+viewDidDisapear of View1
+viewDidLoad of View2
+viewWillApear of View2
+viewWillDisapear of View2
+11. Which of the following phenomenons may cause Memory Leak ?
+App takes up too much memory usage.
+Failing to release unmanaged resources.
+Holding references to managed objects.
+B and C
+12. Which of following keywords NOT refer to one of application state ?
+Active
+Suspended
+Deactive
+Non-running
+13. Which of the following mechanism that NavigationController manage its ViewControllers ?
+Queue
+Stack
+Show & Hide
+Pull & Push
+14. What is the very first method will be called in ViewController when it is navigated to ?
+ViewDidLoad
+ViewWillAppear
+ViewDidAppear
+LoadView
+15. What is the meaning of keyword Retain Count in ARC ?
+Number of instances of Class.
+Number of strong refference to Class
+Number of Copies of Struct.
+Number of refferrence to Class.
+16. Which of the following answers is NOT true about GCD ?
+Dispatch queues are not thread-safe.
+Serial queues guarantee that only one task runs at any given time.
+Single-core device achieve concurrency through a method called time-slicing.
+GCD will execute queue in a FIFO order (First In, First Out)
+17. Which of the following is NOT true ?
+Encapsulation means that objects keep their state information private.
+A class can delegate a part of it’s responsibilities to an instance of another class. This is called the Delegation.
+Inheritance means that objects of one class can derive part of their behaviors from another class.
+You can override methods in order to provide custom behaviour. In override you can define new store property, computed properties and methods to extent functionality beyond its default implementation.
+18. Which of following answers is a function name of UITableViewDelegate ?
+cellForRowAt
+numberOfRowInSection
+numberOfSection
+didSelectRowAt
+19. What is the meaning of "Inactive" keyword in App LifeCycle ?
+The app is in the background but is not executing code
+The app is in the background and executing code
+The app is running in the foreground and is receiving events
+The app is running in the foreground but is currently not receiving events
+20. Which of the following is not default piority in constraint?
+250.0
+500.0
+750.0
+1000.0

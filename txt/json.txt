@@ -1,0 +1,26 @@
+JSON (JavaScript Object Notation) là một định dạng trao đổi dữ liệu nhẹ.
+➔ Con người dễ đọc và viết.
+➔ Máy móc dễ dàng phân tích cú pháp và tạo ra.
+❖ JSON được xây dựng trên hai cấu trúc:
+➔ Tập hợp các cặp tên / giá trị. Trong các ngôn ngữ khác nhau, điều này được thực hiện như một đối tượng, bản ghi, cấu trúc, từ điển, bảng băm, danh sách có khóa hoặc mảng kết hợp.
+➔ Một danh sách các giá trị có thứ tự. Trong hầu hết các ngôn ngữ, điều này được thực hiện dưới dạng mảng, vectơ, danh sách hoặc chuỗi.
+
+Bạn sử dụng lớp JSONSerialization để chuyển đổi JSON thành các đối tượng Foundation và chuyển đổi các đối tượng Foundation thành JSON.
+❖ Đối tượng Foundation có thể được chuyển đổi thành JSON phải có các thuộc tính sau:
+➔ Đối tượng cấp cao nhất là NSArray hoặc NSDictionary.
+➔ Tất cả các đối tượng là phiên bản của NSString, NSNumber, NSArray, NSDictionary hoặc NSNull.
+➔ Tất cả các khóa từ điển đều là phiên bản của NSString.
+➔ Các số không NaN hoặc vô cùng.
+❖ Các quy tắc khác có thể được áp dụng. Gọi isValidJSONObject (_ :) hoặc cố gắng chuyển đổi là những cách cuối cùng để biết liệu một đối tượng nhất định có thể được chuyển đổi thành dữ liệu JSON hay không.
+
+ObjectMapper là một khung được viết bằng Swift giúp bạn dễ dàng chuyển đổi các đối tượng mô hình của mình (các lớp và cấu trúc) sang và từ JSON.
+❖ Tính năng:
+➔ Ánh xạ JSON tới các đối tượng
+➔ Ánh xạ các đối tượng sang JSON
+➔ Đối tượng lồng nhau (đứng một mình, trong mảng hoặc trong từ điển)
+➔ Các biến đổi tùy chỉnh trong quá trình lập bản đồ
+➔ Hỗ trợ cấu trúc
+➔ Hỗ trợ bất biến
+❖ Để hỗ trợ ánh xạ, một lớp hoặc cấu trúc chỉ cần triển khai giao thức Mappable bao gồm các chức năng sau:
+➔ init? (Bản đồ: Bản đồ)
+➔ ánh xạ func đột biến (bản đồ: Bản đồ)

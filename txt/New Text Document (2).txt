@@ -1,0 +1,51 @@
+1. Đơn hàng.
+- Bảng đơn hàng :
+ + STT       		(id)
+ + Tên KH    		(idkhachhang -> bảng taikhoan)
+ + Email                (idkhachhang -> bảng taikhoan)
+ + SDT       		(idkhachhang -> bảng taikhoan)
+ + Ngày đặt  		(NgayThanhToan)
+ + Địa chỉ   		(DiaChi)
+ + Trạng thái   	(TrangThai)
+ + Hình thức thanh toán (HinhThucThanhToan)
+ + Tổng tiên 
+
+- Chi tiết đơn hàng :
+ + STT
+ + Tên KH
+ + SDT
+ + Email
+ + Tên sp 
+ + Hình ảnh sp
+ + Số lượng
+ + Ngày đặt
+ + Địa chỉ
+ + Trạng thái
+ + Tổng tiên
+
+Sửa trạng thái.(Đang duyệt, đang vận chuyển, Giao hàng thành công)
+
+2. Thêm, sửa, xóa Sản phẩm :
+ + id
+ + Tên sp.
+ + Gía sp.
+ + Link Hình ảnh.
+ + Mô tả.
+ + id danh mục sản phẩm(danh mục : Điện thoại, Laptop).
+ + Số lượng. 
+
+3. Xem thông tin Tài khoản.
+ + Mã tài khoản
+ + Họ
+ + Tên
+ + Email
+ + SDT
+ + MatKhau
+ + GioiTinh
+ + MaLoaiTK
+ + DiaChi
+
+4. Xem Danh mục sản phẩm (2 danh mục : Điện thoại, Laptop):
+ + id
+ + Tên loại sp
+ + Link hình ảnh sp.

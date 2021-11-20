@@ -1,0 +1,69 @@
+1. Stack vs Heap
+
+Stack:
++ Đặc điểm :
+	- Ngăn xếp là một vùng bộ nhớ chứa lưu trữ cho các biến cục bộ, cũng như các giá trị tạm thời bên trong và quản lý nội bộ.
+	- Trên một hệ thống hiện đại, có một ngăn xếp trên mỗi luồng thực thi.
+	- Khi một hàm được gọi, một khung ngăn xếp được đẩy lên ngăn xếp và dữ liệu cục bộ của hàm được lưu trữ ở đó. Khi hàm trả về, khung ngăn xếp của nó bị phá hủy. Tất cả điều này xảy ra tự động, mà lập trình viên không cần thực hiện bất kỳ hành động rõ ràng nào ngoài việc gọi một hàm.
+
++ Ưu điểm :
+	- Lưu dữ liệu local
+	- Truy cập rất nhanh
+ 	- Hiệu quả hơn khi phân bổ và phân bổ dữ liệu thỏa thuận
+	- Dữ liệu được lưu trữ trong ngăn xếp chỉ ở đó tạm thời cho đến khi hàm thoát và khiến tất cả bộ nhớ trên ngăn xếp được tự động phân bổ
+	- Không gian được quản lý hiệu quả bởi CPU, bộ nhớ sẽ không bị phân mảnh.
+
++Nhược điểm :
+	➔ Bộ nhớ ngăn xếp rất hạn chế.
+	➔ Tạo quá nhiều đối tượng trên ngăn xếp có thể làm tăng nguy cơ tràn ngăn xếp.
+	➔ Không thể truy cập ngẫu nhiên.
+	➔ Bộ nhớ biến sẽ bị ghi đè, đôi khi dẫn đến hành vi không xác định của hàm hoặc chương trình.
+	➔ Ngăn xếp sẽ nằm ngoài vùng bộ nhớ, có thể dẫn đến kết thúc bất thường.
+
+HEAP :
++ Đặc điểm :
+	- Heap là vùng bộ nhớ máy tính của bạn không được quản lý tự động cho bạn và không được quản lý chặt chẽ bởi CPU. Nó là một vùng bộ nhớ thả nổi tự do hơn (và lớn hơn).
+	- Heap là động trong bộ nhớ và phân bổ xảy ra trong thời gian chạy.Giá trị có thể được tham chiếu bất cứ lúc nào thông qua một địa chỉ bộ nhớ.
+	- Khi bạn tạo một đối tượng mới, một số bộ nhớ sẽ được phân bổ vào heap. Cũng giống như ngăn xếp, bộ nhớ biến mất một lần sẽ không được sử dụng. Tuy nhiên, trong heaps, bộ nhớ không bị ràng buộc với các chức năng hoặc chương trình; thay vào đó, dữ liệu trong heap là toàn cầu.
+
++ Ưu điểm:
+	. Heap giúp bạn tìm số lớn nhất và nhỏ nhất
+	. Bộ sưu tập rác chạy trên bộ nhớ heap để giải phóng bộ nhớ được sử dụng bởi đối tượng.
+	. Phương thức Heap cũng được sử dụng trong Hàng đợi Ưu tiên.
+	. Nó cho phép bạn truy cập các biến trên toàn cầu.
+	. Heap không có bất kỳ giới hạn nào về kích thước bộ nhớ.
+
++ Nhược điểm:
+	. Nó có thể cung cấp bộ nhớ tối đa mà một hệ điều hành có thể cung cấp
+	. Cần nhiều thời gian hơn để tính toán.
+	. Quản lý bộ nhớ phức tạp hơn trong bộ nhớ heap vì nó được sử dụng trên toàn cầu.
+	. Mất quá nhiều thời gian thực thi so với ngăn xếp.
+
+- fallthrough : giống như switch bên java bỏ break ở mỗi case.
+- variadic function
+func hello(a int, b ...int) {  
+}
+hello(1, 2) //passing one argument "2" to b  
+hello(5, 6, 7, 8, 9) //passing arguments "6, 7, 8 and 9" to b  
+
+- inout :
+import UIKit
+
+var num1: Int = 1
+var char1: Character = "a"
+
+func changeNumber(var num: Int) {
+    num = 2
+    print(num) // 2
+    print(num1) // 1
+}
+changeNumber(num1)
+
+func changeChar(inout char: Character) {
+    char = "b"
+    print(char) // b
+    print(char1) // b
+}
+changeChar(&char1) // thay doi gia tri cua char1 thanh b
+
+
